@@ -9,7 +9,7 @@ app.use('/', async (req, res)=>{
         const response = await fetch('https://frasedeldia.azurewebsites.net/api/phrase');
         const data = await response.json();
 
-        res.send(data.phrase)
+        res.send(`"${data.phrase}"`)
     } catch (error) {
         console.error(error);
         res.status(500).send('Something went wrong');
